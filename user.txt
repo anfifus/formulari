@@ -1,0 +1,1 @@
+{"nom":"Pi2","email":"pi2@gmail.com","missatge":"Hola, que tal?"}
