@@ -1,8 +1,10 @@
-package com.example.formulari;
+package com.example.formulari.Service;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
+import com.example.formulari.Entity.Usuari;
+import com.example.formulari.Repository.UsuariRepository;
 
 import tools.jackson.databind.ObjectMapper;
 
@@ -17,7 +19,20 @@ public class ServiceUsuari{
     public ServiceUsuari(){
         
     } Si utilitzes un repositori seria necessari*/
+     private UsuariRepository usuariRepository;
     public void addUsuari(Usuari usuari){
+        usuariRepository.save(usuari);
+    }
+
+    public Usuari getUsuariPerId(Long id){
+        
+        return usuariRepository.findById(id).get();
+       
+    }
+
+    /*
+        Versió amb fitxer de text
+        public void addUsuariFormatText(Usuari usuari){
         String nomFitxer = "user.txt";
         Resource directori = new ClassPathResource(nomFitxer);
         try 
@@ -48,5 +63,5 @@ public class ServiceUsuari{
         catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
