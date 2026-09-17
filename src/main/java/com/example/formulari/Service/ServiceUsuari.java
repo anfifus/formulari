@@ -1,6 +1,7 @@
 package com.example.formulari.Service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.formulari.Entity.Usuari;
 import com.example.formulari.Repository.UsuariRepository;
@@ -22,6 +23,7 @@ public class ServiceUsuari{
     public ServiceUsuari(){
         
     } Si utilitzes un repositori seria necessari*/
+     @Autowired
      private UsuariRepository usuariRepository;
     public void addUsuari(Usuari usuari){
         usuariRepository.save(usuari);
