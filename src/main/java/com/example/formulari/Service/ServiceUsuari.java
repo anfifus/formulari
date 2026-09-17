@@ -1,17 +1,20 @@
 package com.example.formulari.Service;
 
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+
 import org.springframework.stereotype.Service;
 import com.example.formulari.Entity.Usuari;
 import com.example.formulari.Repository.UsuariRepository;
+
+/* Importacions per utilitzar fitxers en comptes de bd
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 import tools.jackson.databind.ObjectMapper;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
+import java.io.IOException;*/
 
 @Service
 public class ServiceUsuari{

@@ -7,7 +7,7 @@ COPY src ./src
 run mvn clean package -DskipTests
 
 #2 Fase execució
-FROM eclipse-temurin:17jre-jammy
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
