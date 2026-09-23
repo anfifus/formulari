@@ -1,4 +1,5 @@
 package com.example.formulari.Entity;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +10,7 @@ public class Usuari{
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long id;
+    @Column (name="nom",unique = true, nullable = false)
     private String nom;
     private String password;
 	private String email;

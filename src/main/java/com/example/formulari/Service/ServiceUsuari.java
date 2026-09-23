@@ -4,6 +4,7 @@ package com.example.formulari.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.formulari.Entity.Usuari;
+import com.example.formulari.Exception.NomDuplicatException;
 import com.example.formulari.Repository.UsuariRepository;
 
 /* Importacions per utilitzar fitxers en comptes de bd
@@ -26,7 +27,13 @@ public class ServiceUsuari{
      @Autowired
      private UsuariRepository usuariRepository;
     public void addUsuari(Usuari usuari){
-        usuariRepository.save(usuari);
+        if (!usuariRepository.existByName(usuari.getNom())) {
+            usuariRepository.save(usuari);    
+        }
+        else{
+            throw new NomDuplicatException("El nom: "+usuari.getNom()+" existeix i per tant no es pot crear");
+        }
+        
     }
 
     public Usuari getUsuariPerId(Long id){
