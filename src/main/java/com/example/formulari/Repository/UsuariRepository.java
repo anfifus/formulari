@@ -7,6 +7,6 @@ import com.example.formulari.Entity.Usuari;
 @Repository 
 public interface UsuariRepository extends CrudRepository<Usuari,Long>{
 
-    boolean existByName(String nom);
+    boolean existsByNom(String nom);
     
 } 
