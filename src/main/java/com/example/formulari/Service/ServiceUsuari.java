@@ -27,7 +27,7 @@ public class ServiceUsuari{
      @Autowired
      private UsuariRepository usuariRepository;
     public void addUsuari(Usuari usuari){
-        if (!usuariRepository.existByName(usuari.getNom())) {
+        if (!usuariRepository.existsByNom(usuari.getNom())) {
             usuariRepository.save(usuari);    
         }
         else{
