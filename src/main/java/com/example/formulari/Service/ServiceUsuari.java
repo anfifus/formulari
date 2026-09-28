@@ -28,7 +28,7 @@ public class ServiceUsuari{
      private UsuariRepository usuariRepository;
     public void addUsuari(Usuari usuari){
         if (!usuariRepository.existsByNom(usuari.getNom())) {
-            usuariRepository.save(usuari);    
+            usuariRepository.insertUser(usuari.getNom(),usuari.getPassword(), usuari.getEmail(), usuari.getMissatge());    
         }
         else{
             throw new NomDuplicatException("El nom: "+usuari.getNom()+" existeix i per tant no es pot crear");
