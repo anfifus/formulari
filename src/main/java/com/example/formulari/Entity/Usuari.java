@@ -25,6 +25,7 @@ public class Usuari{
         this.email = email;
         this.missatge = missatge;
     }
+    public long getId(){return id;}
     public String getNom(){return nom;}
     public String getPassword() {return password;}
     public String getEmail(){return email;}

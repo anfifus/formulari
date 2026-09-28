@@ -1,5 +1,7 @@
 package com.example.formulari.RestController;
 
+import java.io.Console;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +19,7 @@ public class RestControllerUsuari{
     }
     @PostMapping("/usuari")
     public void addUsuari(@RequestBody Usuari usuari){
+        System.out.println("Comprobació si té o no id: "+usuari.getId());
         serviceUsuari.addUsuari(usuari);
     }
     @GetMapping("/usuari/{id}")
